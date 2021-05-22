@@ -47,6 +47,7 @@ namespace SamuraiAPI
                 opt.UseSqlServer(Configuration.GetConnectionString("SamuraiConnex"))
                 .EnableSensitiveDataLogging()
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
+            services.AddScoped<BusinessLogicData>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SamuraiAPI", Version = "v1" });
